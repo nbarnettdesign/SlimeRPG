@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
         isAttacking = false;
-        timer = wanderTimer;
+        timer = 0;
         agent.speed = walkSpeed;
     }
 
@@ -52,8 +52,7 @@ public class EnemyController : MonoBehaviour
         {
             if (timer >= wanderTimer)
             {
-                newPos = RandomNavSphere(transform.position, wanderRadius, 9);
-                agent.SetDestination(newPos);
+                WanderAround(wanderRadius);
                 timer = 0;
             }
         }
@@ -102,4 +101,14 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 
+    public void WanderAround(float radius)
+    {
+        if(agent == null)
+        {
+            agent = GetComponent<NavMeshAgent>();
+        }
+        newPos = RandomNavSphere(transform.position, radius, 9);
+        agent.SetDestination(newPos);
+
+    }
 }

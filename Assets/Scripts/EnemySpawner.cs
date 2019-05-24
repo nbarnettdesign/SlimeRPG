@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnTimerMax;
     float spawnTime;
     float spawnTimer;
+    public float spawnRadius;
     GameObject spawner;
 
     private void Start()
@@ -43,6 +44,7 @@ public class EnemySpawner : MonoBehaviour
                 spawning = false;
                 GameObject enemySpawned = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Count - 1)], transform.position, Quaternion.identity);
                 enemySpawned.GetComponent<EnemyStats>().spawner = spawner;
+                enemySpawned.GetComponent<EnemyController>().WanderAround(spawnRadius);
             }
         }
 
