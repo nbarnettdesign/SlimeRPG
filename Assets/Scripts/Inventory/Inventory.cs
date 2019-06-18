@@ -15,7 +15,6 @@ public class Inventory : MonoBehaviour
         {
             Debug.LogWarning("More than one instance of inventory found");
         }
-
         instance = this;
     }
 
@@ -27,6 +26,7 @@ public class Inventory : MonoBehaviour
     public int space = 20;
 
     public List<Item> items = new List<Item>();
+    public List<int> itemCount = new List<int>();
 
     public bool Add (Item item)
     {
@@ -37,7 +37,17 @@ public class Inventory : MonoBehaviour
                 Debug.Log("not enough room.");
                 return false;
             }
+            for (int i = 0; i < items.Count; i++)
+            {
+                if(items[i].name == item.name)
+                {
+                    itemCount[i] += 1;
+                    Debug.Log(item.name + ": " + itemCount[i]);
+                    return true;
+                }
+            }
             items.Add(item);
+            itemCount.Add(1);
 
             if(onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
