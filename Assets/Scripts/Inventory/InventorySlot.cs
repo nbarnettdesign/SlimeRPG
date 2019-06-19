@@ -8,6 +8,7 @@ public class InventorySlot : MonoBehaviour
 
     public Image icon;
     public Button removeButton;
+    public Text stackNumber;
 
 
     public void AddItem (Item newItem)
@@ -25,6 +26,7 @@ public class InventorySlot : MonoBehaviour
         icon.sprite = null;
         icon.enabled = false;
         removeButton.interactable = false;
+        stackNumber.Text = "";
 
 
     }
