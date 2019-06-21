@@ -10,11 +10,14 @@
       <File FileName="Assets/Scripts/Items/Interactable.cs" Line="15" Column="1" />
       <File FileName="Assets/Scripts/Inventory/Chest.cs" Line="17" Column="22" />
       <File FileName="Assets/FarmPlot.cs" Line="28" Column="5" />
-      <File FileName="Assets/ThumbsUp/Prefabs/Items/ItemPickup.cs" Line="24" Column="49" />
       <File FileName="Assets/Crops.cs" Line="5" Column="34" />
-      <File FileName="Assets/Scripts/Inventory/Inventory.cs" Line="43" Column="17" />
       <File FileName="Assets/Scripts/Inventory/EquipmentManager.cs" Line="74" Column="23" />
-      <File FileName="Assets/Scripts/Inventory/InventoryUI.cs" Line="40" Column="38" />
+      <File FileName="Assets/ThumbsUp/Prefabs/Items/Item.cs" Line="4" Column="1" />
+      <File FileName="Assets/ThumbsUp/Prefabs/Items/ItemPickup.cs" Line="26" Column="9" />
+      <File FileName="Assets/Scripts/Inventory/InventorySlot.cs" Line="8" Column="14" />
+      <File FileName="Assets/Scripts/Inventory/InventoryUI.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/Inventory/Inventory.cs" Line="32" Column="80" />
+      <File FileName="Assets/Scripts/Inventory/InventoryManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

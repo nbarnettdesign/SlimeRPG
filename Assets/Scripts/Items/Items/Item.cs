@@ -7,6 +7,9 @@ public class Item : ScriptableObject
 {
     new public string name = "New Item";
     public Sprite icon = null;
+    public int stackNumber;
+    public int maxStackNumber;
+    public bool isStackable;
     public bool isDefaultItem = false;
     public int ID;
 

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 257
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -476,6 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 8152398626338647104}
   removeButton: {fileID: 8152398624265059734}
+  stackNumber: {fileID: 6210680034936295642}
 --- !u!1 &8152398626338647106
 GameObject:
   m_ObjectHideFlags: 0

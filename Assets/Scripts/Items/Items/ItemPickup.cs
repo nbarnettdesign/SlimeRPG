@@ -6,7 +6,7 @@ public class ItemPickup : Interactable
     public Item item;
     public bool wasEaten;
     public bool wasPickedUp;
-    public bool notPickupable;
+    public bool notPickupable; 
 
     public override void Interact()
     {
