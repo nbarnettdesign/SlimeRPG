@@ -1,14 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class InventorySlot : MonoBehaviour
 {
-    Item item;
+    public Item item;
 
     public Image icon;
     public Button removeButton;
-    public Text stackNumber;
+    public TextMeshProUGUI stackNumber;
+    public int textAmount;
+    public bool isAvailable;
 
 
     public void AddItem (Item newItem)
@@ -18,6 +23,11 @@ public class InventorySlot : MonoBehaviour
         icon.sprite = item.icon;
         icon.enabled = true;
         removeButton.interactable = true;
+        stackNumber.text = item.stackNumber.ToString();
+        if (stackNumber.text == "1" || stackNumber.text == "0")
+        {
+            stackNumber.text = "";
+        }
     }
 
     public void ClearSlot ()
@@ -26,7 +36,7 @@ public class InventorySlot : MonoBehaviour
         icon.sprite = null;
         icon.enabled = false;
         removeButton.interactable = false;
-        stackNumber.Text = "";
+        stackNumber.text = "";
 
 
     }

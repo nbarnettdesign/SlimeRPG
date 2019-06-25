@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class Inventory : MonoBehaviour
     public List<Item> items = new List<Item>();
     public List<int> itemCount = new List<int>();
 
+    public List<TextMeshProUGUI> inventorySlotText= new List<TextMeshProUGUI>();
+
     public bool Add (Item item)
     {
         if (!item.isDefaultItem)
@@ -43,6 +46,7 @@ public class Inventory : MonoBehaviour
                 {
                     itemCount[i] += 1;
                     Debug.Log(item.name + ": " + itemCount[i]);
+                    inventorySlotText[i].text = itemCount[i].ToString();
                     return true;
                 }
             }
