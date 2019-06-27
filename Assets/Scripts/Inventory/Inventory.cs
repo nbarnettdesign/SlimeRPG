@@ -28,7 +28,6 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
     public List<int> itemCount = new List<int>();
-
     public List<TextMeshProUGUI> inventorySlotText= new List<TextMeshProUGUI>();
 
     public bool Add (Item item)
@@ -38,6 +37,7 @@ public class Inventory : MonoBehaviour
             if(items.Count >= space)
             {
                 Debug.Log("not enough room.");
+                Debug.Log("Returning false 40");
                 return false;
             }
             for (int i = 0; i < items.Count; i++)
@@ -47,6 +47,7 @@ public class Inventory : MonoBehaviour
                     itemCount[i] += 1;
                     Debug.Log(item.name + ": " + itemCount[i]);
                     inventorySlotText[i].text = itemCount[i].ToString();
+                    Debug.Log("Returning True 49");
                     return true;
                 }
             }
@@ -56,6 +57,7 @@ public class Inventory : MonoBehaviour
             if(onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
         }
+        Debug.Log("Returning True 59");
         return true;
 
     }

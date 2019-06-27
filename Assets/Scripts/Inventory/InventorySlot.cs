@@ -8,6 +8,9 @@ using TMPro;
 public class InventorySlot : MonoBehaviour
 {
     public Item item;
+    public ItemPickup itemPickup;
+    InventoryManager inventoryManager;
+    InventorySlot slot;
 
     public Image icon;
     public Button removeButton;
@@ -16,9 +19,16 @@ public class InventorySlot : MonoBehaviour
     public bool isAvailable;
 
 
-    public void AddItem (Item newItem)
+    private void Start()
+    {
+        inventoryManager = (InventoryManager)FindObjectOfType(typeof(InventoryManager));
+        slot = this;
+    }
+
+    public void AddItem (Item newItem, ItemPickup newItemPickup)
     {
         item = newItem;
+        itemPickup = newItemPickup;
 
         icon.sprite = item.icon;
         icon.enabled = true;
@@ -29,6 +39,19 @@ public class InventorySlot : MonoBehaviour
             stackNumber.text = "";
         }
     }
+
+
+    public void UpdateText()
+    {
+        stackNumber.text = itemPickup.stackNumber.ToString();
+        if (itemPickup.stackNumber >= itemPickup.maxStackNumber)
+        {
+            isAvailable = false;
+            inventoryManager.availableSlots.Remove(this);
+            //inventoryManager.UpdateAvailableSlots();
+        }
+    }
+
 
     public void ClearSlot ()
     {

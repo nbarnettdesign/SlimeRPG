@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Default Shoes
   icon: {fileID: 0}
+  stackNumber: 0
+  maxStackNumber: 0
+  isStackable: 0
   isDefaultItem: 1
   ID: 302
   skills:
   - id: 300
     skill: Armor
     exp: 1
+    level: 0
+    expSpeed: 0
   equipSlot: 5
   mesh: {fileID: 2143435763097916270, guid: 93b2517528008453a99b9288f706a8d4, type: 3}
   coveredMeshRegions: 
